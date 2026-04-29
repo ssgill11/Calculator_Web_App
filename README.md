@@ -1,4 +1,4 @@
-# Modern Calculator
+# Calculator
 
 # Technologies Used:
 This calculator app has been developed using Latest features of HTML5, CSS (CSS3+) and JavaScript (ES6+).
