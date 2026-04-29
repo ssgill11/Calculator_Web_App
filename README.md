@@ -35,7 +35,7 @@ This project demonstrates clean UI design, safe JavaScript practices, and respon
 
 ## 🚀 Live Demo
 
-(Git Repository Link -> Will be Provided on Ask)
+https://github.com/ssgill11/CALCULATOR.git
 ---
 
 ## 🛠️ Tech Stack
@@ -62,7 +62,7 @@ This project demonstrates clean UI design, safe JavaScript practices, and respon
 ### 1. Clone the repository
 
 ```bash
-git clone (Git Repository Link -> Will be Provided on Ask)
+git clone https://github.com/ssgill11/CALCULATOR.git
 ```
 
 ### 2. Open the project
