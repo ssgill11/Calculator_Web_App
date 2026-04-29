@@ -1,325 +1,132 @@
-# Calculator
+# 🧮 Modern Calculator App
 
-# Technologies Used:
-This calculator app has been developed using Latest features of HTML5, CSS (CSS3+) and JavaScript (ES6+).
+![HTML](https://img.shields.io/badge/HTML5-Structure-orange)
+![CSS](https://img.shields.io/badge/CSS3-Styling-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-Logic-yellow)
+![Status](https://img.shields.io/badge/Status-Active-success)
 
-1. HTML (Clean + Semantic)
-2. CSS (Modern UI + Grid + Responsive)
-3. JavaScript (Clean + Safe Logic)
+---
 
-# The detailed explaination of each component is given below:
-****************************************************************
-📄 1. HTML (index.html) — Structure
-****************************************************************
-This file uses HTML to define the layout and elements of the calculator.
+## 📌 Overview
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Modern Calculator</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+A modern, lightweight calculator built using **HTML, CSS, and JavaScript**.
+This project demonstrates clean UI design, safe JavaScript practices, and responsive layout using current web standards.
 
-* <!DOCTYPE html> → tells browser to use modern HTML5
-* <html lang="en"> → improves accessibility & SEO
-* <meta charset="UTF-8"> → supports all characters
-* <link> → connects external CSS file
+---
 
-🔹 Main UI Container
-<main class="calculator">
-* Semantic tag (<main>) → better than generic <div>
-* class="calculator" → used for styling
+## ✨ Features
 
-🔹 Heading
-<h1>Calculator</h1>
-* Title displayed on screen
+* ➕ Basic arithmetic operations (+, −, ×, ÷)
+* 🧹 Clear & delete functionality
 
-🔹 Display Screen
-<input type="text" id="display" readonly />
-* type="text" → shows output
-* id="display" → accessed in JavaScript
-* readonly → prevents manual typing (only buttons work)
 
-🔹 Buttons Container
-<div class="buttons">
-* Wraps all calculator buttons
-* Styled using CSS Grid
+* 📱 Fully responsive design
+* ⚡ Fast and lightweight (no frameworks)
+* 🔒 Input validation (no unsafe `eval`)
+* 🎨 Modern UI (CSS Grid + glassmorphism)
 
-🔹 Example Buttons
-<button data-value="7">7</button>
-<button data-action="clear">C</button>
-<button data-action="equals">=</button>
+---
 
-Two important attributes:
+## 📸 Preview
 
-✅ data-value
-* Stores numbers/operators
-* Example:
-data-value="7"
-→ JS reads this and appends 7
+<img width="867" height="901" alt="Image" src="https://github.com/user-attachments/assets/72c4604d-a91b-49ab-bff2-0ce4bce2e9d3" />
 
-✅ data-action
-Used for special operations:
-clear
-delete
-equals
-👉 This avoids messy inline JavaScript.
+---
 
-🔹 Script Link
-<script src="script.js"></script>
-* Connects JavaScript file
-* Placed at bottom → ensures HTML loads first
+## 🚀 Live Demo
 
-****************************************************************
-🎨 2. CSS (style.css) — Styling
-****************************************************************
-👉 This file uses CSS to design the UI.
-🔹 CSS Variables (Modern Feature)
-:root {
-  --bg: linear-gradient(135deg, #6a11cb, #2575fc);
-  --btn: #ffffff;
-  --operator: #00d9ff;
-}
-* Reusable variables
-* Easy to change theme later
+(Git Repository Link -> Will be Provided on Ask)
+---
 
-🔹 Centering Layout
-body {
-  display: grid;
-  place-items: center;
-  height: 100vh;
-}
-* Uses CSS Grid
-* place-items: center → perfect centering (modern trick)
+## 🛠️ Tech Stack
 
-🔹 Calculator Box
-.calculator {
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-}
-* backdrop-filter → glassmorphism effect (modern UI trend)
-* Rounded corners + shadow → clean design
+* **HTML5** – Structure
+* **CSS3** – Styling (Grid, variables, responsive design)
+* **JavaScript (ES6+)** – Logic & interactivity
 
-🔹 Display Styling
-#display {
-  text-align: right;
-  font-size: 1.5rem;
-}
-* Right-aligned → like real calculators
-* Larger font for readability
+---
 
-🔹 Grid Layout for Buttons
-.buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-* 4-column layout
-* Automatically arranges buttons
+## 📂 Project Structure
 
-🔹 Buttons
-button {
-  border-radius: 12px;
-  transition: 0.2s;
-}
-* Smooth hover animation
-* Modern rounded UI
+```
+📁 calculator-app
+ ┣ 📄 index.html
+ ┣ 📄 style.css
+ ┗ 📄 script.js
+```
 
-🔹 Special Buttons
-.operator {
-  background: var(--operator);
-}
+---
 
-.equals {
-  grid-column: span 2;
-}
+## ▶️ Getting Started
 
-.zero {
-  grid-column: span 2;
-}
-* Operators → different color
-* span 2 → bigger buttons (like real calculator)
+### 1. Clone the repository
 
-****************************************************************
-⚙️ 3. JavaScript (script.js) — Logic
-****************************************************************
-This uses JavaScript to make the calculator functional.
+```bash
+git clone (Git Repository Link -> Will be Provided on Ask)
+```
 
-🔹 Selecting Elements
-- const display = document.getElementById("display");
-- const buttons = document.querySelector(".buttons");
-* getElementById → gets display input
-* querySelector → gets buttons container
+### 2. Open the project
 
-🔹 Event Delegation (Modern Technique)
-buttons.addEventListener("click", (e) => {
+```bash
+cd calculator-app
+```
 
-👉 Instead of adding event to every button:
+### 3. Run
 
-* One listener handles all clicks
-* Faster & scalable
+* Open `index.html` in your browser
 
-🔹 Detect Button Click
-- const target = e.target;
-- if (!target.matches("button")) return;
-* Ensures only button clicks are processed
+---
 
-🔹 Get Data from Button
-- const value = target.dataset.value;
-- const action = target.dataset.action;
-Reads custom HTML attributes:
-* data-value
-* data-action
+## 🧠 How It Works
 
-🔹 Add Numbers / Operators
-if (value) {
-  display.value += value;
-}
-* Appends clicked value to display
+* Uses **event delegation** for efficient button handling
+* Updates display dynamically via DOM manipulation
+* Validates input before calculation
+* Evaluates expressions using a safer alternative to `eval()`
 
-🔹 Clear Screen
-if (action === "clear") {
-  display.value = "";
-}
+---
 
-🔹 Delete Last Character
-if (action === "delete") {
-  display.value = display.value.slice(0, -1);
-}
-* slice(0, -1) → removes last character
+## ⚠️ Limitations
 
-🔹 Calculate Result
-if (action === "equals") {
-  try {
-    display.value = calculate(display.value);
-  } catch {
-    display.value = "Error";
-  }
-}
-* Uses try...catch → prevents crashes
+* Supports basic arithmetic only
+* No keyboard input (yet)
+* No advanced math functions
 
-🔹 Safe Calculation Function
-function calculate(expr) {
-  if (!/^[0-9+\-*/.() ]+$/.test(expr)) {
-    throw new Error("Invalid input");
-  }
-  return Function(`"use strict"; return (${expr})`)();
-}
+---
 
-****************************************************************
-What’s happening:
-****************************************************************
-1. ✅ Validation (IMPORTANT)
-- /^[0-9+\-*/.() ]+$/
-- Allows only numbers & operators
-- Blocks harmful input
+## 🔮 Future Improvements
 
-2. ✅ Execution
-- Function(...)
-* Safer alternative to eval()
+* ⌨️ Keyboard support
+* 🌙 Dark/Light theme toggle
+* 🧮 Scientific calculator features
+* 📲 Progressive Web App (PWA) support
 
-****************************************************************
-🧾 Final Understanding
-****************************************************************
-🧱 HTML → Structure
-- Defines buttons, display, layout
-🎨 CSS → Design
-- Makes it modern, responsive, attractive
-⚙️ JavaScript → Logic
-- Handles clicks, updates display, calculates result
+---
 
-****************************************************************
-🧾 Core Technologies + Versions
-****************************************************************
-1. HTML (HTML5)
-- Version: HTML5 (Living Standard — continuously updated)
-- Used Features:
-- Semantic tags (<main>)
-- Custom data attributes (data-*)
-- Modern input handling
+## 🤝 Contributing
 
-👉 There is no “HTML6”—HTML is now a living standard, so HTML5 is still the correct reference.
+Contributions are welcome!
+If you'd like to improve this project:
 
-2. CSS (CSS3+)
-- Version: CSS3 + modern modules (no single version anymore)
-Key modules used:
-- CSS Grid Layout (Level 2)
-- CSS Variables (Custom Properties)
-- Backdrop Filter
-- Flex/Grid alignment (place-items)
+1. Fork the repo
+2. Create a new branch
+3. Submit a pull request
 
-👉 Like HTML, CSS is also a living standard, so instead of “CSS4”, we refer to individual modules.
+---
 
-3. JavaScript (ES6+)
-- Version: ECMAScript 2015 (ES6) → ES2023+ features
-Features used:
-- const and let
-- Arrow functions (=>)
-- Template literals
-- addEventListener
-- dataset API
-- try...catch
-- String.slice()
+## ⭐ Show Your Support
 
-👉 In 2026, most browsers support ES2020+ comfortably, so this code is fully modern.
+If you found this helpful, consider giving it a ⭐ on GitHub!
 
-🌐 Browser APIs / Web Platform Features
+---
 
-These are not separate languages, but important technologies:
+## 📄 License
 
-4. DOM API (Document Object Model)
-- Version: Living Standard
-Used for:
-- document.getElementById
-- querySelector
-- Event handling
+This project is open-source and available under the MIT License.
 
-👉 This is how JavaScript talks to HTML.
+---
 
-5. Event Handling System
-- Type: Web API
-Method Used:
-- addEventListener()
+## 👨‍💻 Author
 
-👉 Modern replacement for inline onclick.
-
-6. CSS Rendering Engine Features
-- Grid layout engine
-- Compositing (for blur effects)
-- GPU acceleration (for animations)
-
-👉 These are handled by browsers like:
-- Google Chrome
-- Mozilla Firefox
-- Microsoft Edge
-
-⚙️ JavaScript Execution Engine
-This app runs inside browser engines like:
-- V8 (Chrome, Edge)
-- SpiderMonkey (Firefox)
-
-🧠 Architectural Style
-7. Frontend Architecture
-- Type: Vanilla JavaScript (No framework)
-Pattern Used:
-- Event Delegation
-- Separation of Concerns
-
-🚫 Technologies NOT Used (Important Insight)
-This app deliberately avoids:
-❌ React
-❌ Angular
-❌ Vue.js
-
-👉 This keeps it lightweight and beginner-friendly.
-----------------------------------------------------------------
-📊 Final Stack Summary
-----------------------------------------------------------------
-Layer	        Technology	        Version
-----------------------------------------------------------------
-Structure	    HTML	            HTML5 (Living Standard)
-Styling	        CSS	CSS3+           (Grid, Variables)
-Logic	        JavaScript	        ES6+ (ES2020-ready)
-Interaction	    DOM API	Living      Standard
-Execution	    JS Engine	        V8 / SpiderMonkey
-----------------------------------------------------------------
+Sukhjinder Singh
+GitHub: https://github.com/users/ssgill11
